@@ -12,10 +12,11 @@ textarea {
 	width: calc(100% - 8px);
 	margin: 0 auto;
 	min-width: 400px;
-	height: 200px;
+	height: 100px;
 	background: #222;
 	color: #eee;
 	padding: 4px;
+	border-radius: 3px;
 }
 
 button,
