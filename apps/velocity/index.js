@@ -103,7 +103,7 @@ $(document).ready(function() {
 		'Points pulled in, i.e. 2, 5, 3, 8, 8 ',
 		$pulledIn,
 		$pulledInTotal,
-		$pointsLeft ?
+		$pointsLeft.val() ?
 			'<br>You should pull in ' + $pointsLeft + ' more points. <i>as if it mattered</i>' :
 			''
 	).css({
