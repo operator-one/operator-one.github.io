@@ -105,7 +105,7 @@ $(document).ready(function() {
 		$pulledInTotal,
 		'<br>You should pull in ',
 		$pointsLeft,
-		' more points.'
+		' more points. <i>as if it mattered</i>'
 	).css({
 		'font-family': 'monospace'
 	});
