@@ -1,0 +1,273 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	color: #111;
+	background-color: #eee;
+	font-family: serif;
+	position: relative;
+}
+
+body.full .chart {
+	width: 100%;
+}
+
+body.full .header,
+body.full .title {
+	width: calc(100% - 20px);
+}
+
+body.full .menu {
+	left: -200px;
+}
+
+.scroll {
+	overflow: auto;
+}
+
+.scroll::-webkit-scrollbar-track {
+	background-color: #ddd;
+}
+
+.scroll::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #ddd;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	background-color: #ccc;
+}
+
+.header {
+	padding: 10px;
+	height: 52px;
+	width: calc(100% - 220px);
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #eee;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	user-select: none;
+}
+
+.header > * {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+body.no-chart .header > span:not(.clear) {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+body.no-queue .header .queue-controls {
+	display: none;
+}
+
+button {
+	width: 42px;
+	height: 42px;
+	margin: 0 10px 0 0;
+	border-radius: 3px;
+	border-width: 0px;
+	font-weight: bold;
+	color: #111;
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+button.columns,
+button.float-lines {
+	width: 40px;
+	font-size: 0.6em;
+}
+
+.share > button,
+.clear > button {
+	width: auto;
+	font-size: 0.6em;
+}
+
+label,
+span {
+	height: 42px;
+	line-height: 42px;
+	display: inline-block;
+}
+
+label {
+	margin: 0 5px 0 0;
+}
+
+.header > span {
+	padding: 0 0 0 10px;
+}
+
+.header > span > * {
+	float: left;
+}
+
+.header > span > label {
+	font-size: 10px;
+}
+
+.header > span > button:last-child {
+	margin: 0;
+}
+
+.menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 200px;
+	user-select: none;
+}
+
+.collapse {
+	position: relative;
+	float: left;
+	width: 42px;
+	height: 42px;
+	margin: 0;
+}
+
+.menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu ul li.active {
+	background-color: #ddd;
+}
+
+.menu ul.list li > span {
+	display: none;
+}
+
+.menu ul li > span {
+	float: right;
+	height: auto;
+	line-height: normal;
+	font-weight: bold;
+	width: 20px;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+.menu ul li.active > span {
+	display: inline-block;
+}
+
+.menu ul li {
+	padding: 10px;
+	cursor: pointer;
+}
+.menu ul li:not(.active):hover {
+	background-color: #e5e5e5;
+}
+
+.menu ul.queue {
+	border-bottom: 5px solid #ccc;
+}
+
+.title {
+	position: absolute;
+	top: 62px;
+	right: 0;
+	height: 32px;
+	margin: 10px 10px 0;
+	width: calc(100% - 220px);
+}
+
+.chart {
+	position: absolute;
+	top: 114px;
+	right: 0;
+	height: calc(100% - 114px);
+	width: calc(100% - 200px);
+}
+
+.chart .empty-chart {
+	margin: 0 10px;
+}
+
+.chart .empty-chart:before {
+	content: '\02190';
+	margin-right: 10px;
+}
+
+.column {
+	margin: 0;
+	padding: 0 10px 40px;
+	width: calc(50% - 30px);
+	float: left;
+}
+
+.chart.no-columns .column {
+	width: calc(100% - 30px);
+	padding: 0 10px;
+}
+
+.chart:not(.no-columns) .column ul:first-child li:first-child,
+.chart.no-columns .column:first-child ul:first-child li:first-child {
+	margin: 0;
+}
+
+
+.chart.no-columns .column:last-child {
+	margin: 0 0 20px;
+	padding: 0 10px 40px;
+}
+
+.chart ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 100%;
+	overflow: visible;
+}
+
+.chart ul li.empty {
+	margin: 26px 0 0;
+	height: 0;
+	width: 100%;
+}
+
+.chart ul li {
+	margin: 26px 0 0;
+	white-space: nowrap;
+	font-size: 0.9em;
+}
+
+.chart ul li:first-child {
+	width: 100%;
+	font-weight: bold;
+}
+
+.chart ul li .chord {
+	position: relative;
+	display: inline-block;
+	top: -22px;
+	width: 0px;
+	white-space: nowrap;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 1.1em;
+}
+
+.chart.float-lines ul li {
+	float: left;
+	padding-right: 5%;
+}
+
+
