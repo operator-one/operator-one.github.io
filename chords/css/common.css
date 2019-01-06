@@ -73,8 +73,8 @@ body.no-queue .header .queue-controls {
 }
 
 button {
-	width: 42px;
-	height: 42px;
+	width: 48px;
+	height: 48px;
 	margin: 0 10px 0 0;
 	border-radius: 3px;
 	border-width: 0px;
@@ -98,8 +98,8 @@ button.float-lines {
 
 label,
 span {
-	height: 42px;
-	line-height: 42px;
+	height: 48px;
+	line-height: 48px;
 	display: inline-block;
 }
 
@@ -135,8 +135,8 @@ label {
 .collapse {
 	position: relative;
 	float: left;
-	width: 42px;
-	height: 42px;
+	width: 48px;
+	height: 48px;
 	margin: 0;
 }
 
