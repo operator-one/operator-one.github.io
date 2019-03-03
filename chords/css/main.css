@@ -1,0 +1,51 @@
+
+body {
+	padding-bottom: 50px;
+	zoom: 2;
+}
+
+div.content {
+	max-width: 700px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+a {
+	display: inline-block;
+	padding: 5px 20px;
+	font-size: 1.5em;
+	text-decoration: none;
+	float: left;
+}
+
+.group {
+	padding: 10px;
+}
+
+.group > span {
+	font-size: 2em;
+}
+
+div.link {
+	height: 38px;
+	position: relative;
+}
+
+div.link a:first-child + a {
+	position: absolute;
+	right: 70px;
+	top: -3px;
+	font-size: 1.3em;
+}
+
+a.youtube {
+	position: absolute;
+	top: 2px;
+	right: 20px;
+	background-image: url(/imgs/icons/youtube.png);
+	background-size: 50%;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 16px;
+}

@@ -47,7 +47,7 @@
 								.replace('b', '&flat;');
 
 
-							var scale = note.indexOf('b') === 1 ? flats : sharps;
+							var scale = note.indexOf('&flat;') === 1 ? flats : sharps;
 							var index = (scale.indexOf(note) + transposition) % scale.length;
 
 							if( index < 0 ) {

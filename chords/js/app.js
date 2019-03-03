@@ -16,10 +16,26 @@
 		getChartById: function(id) {
 			var i, len, chart;
 
+			if( !id ) {
+				return;
+			}
+
+			spl = id.split(':');
+			id = spl[0];
+			trans = Number(spl[1]);
+
 			for( i = 0, len = _data.charts.length; i < len; i++ ) {
 				chart = _data.charts[i];
 
 				if( chart.id === id ) {
+					if( Number.isInteger(trans) ) {
+						chart.transposition = trans;
+
+						if( (_data.selectedChart || {}).id === id ) {
+							_data.selectedChart.transposition = trans;
+						}
+					}
+
 					return chart;
 				}
 			}
