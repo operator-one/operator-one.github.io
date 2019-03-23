@@ -23,6 +23,8 @@ How You [G]serve I'll serve
 If this life I [D]lose, I will [Em7]follow [C2]You
 I will [G]follow [D]You
 
+---
+
 Verse 2
 [C]Light unto the [Em7]world
 Light unto my [D]life
