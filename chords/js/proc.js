@@ -20,7 +20,8 @@
 						transposition: 0,
 						zoom: 0,
 						columns: true,
-						floatLines: false
+						floatLines: false,
+						hideChords: false
 					};
 				})
 				.sort(function(a, b) {
@@ -46,7 +47,6 @@
 								.replace('#', '&sharp;')
 								.replace('b', '&flat;');
 
-
 							var scale = note.indexOf('&flat;') === 1 ? flats : sharps;
 							var index = (scale.indexOf(note) + transposition) % scale.length;
 
@@ -68,7 +68,9 @@
 							return section
 								.split(/\n/)
 								.map(function(line) {
-									return _proc._transpose(line, chart.transposition);
+									return chart.hideChords ?
+										line.replace(/\[.*?\]/g, '') :
+										_proc._transpose(line, chart.transposition);
 								});
 						});
 				});

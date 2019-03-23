@@ -15,6 +15,15 @@
 
 			location.href = location.origin;
 		},
+		hideChords: function() {
+			_data.selectedChart.hideChords = !_data.selectedChart.hideChords;
+			_app.saveData('selectedChart');
+
+			_proc.chart(_data.selectedChart);
+			_render.chart(_data.selectedChart);
+
+			__.select('span.lyrics button').innerHTML = _data.selectedChart.hideChords ? 'CHORDS' : 'LYRICS';
+		},
 		queueNav: function(direction) {
 			_data.queueIndex += direction;
 			_app.saveData('queueIndex');

@@ -91,7 +91,8 @@ button.float-lines {
 }
 
 .share > button,
-.clear > button {
+.clear > button,
+.lyrics > button {
 	width: auto;
 	font-size: 0.6em;
 }
