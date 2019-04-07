@@ -23,7 +23,7 @@ body.full .title {
 }
 
 body.full .menu {
-	left: -200px;
+	left: -280px;
 }
 
 .scroll {
@@ -47,7 +47,7 @@ body.full .menu {
 .header {
 	padding: 10px;
 	height: 52px;
-	width: calc(100% - 220px);
+	width: calc(100% - 300px);
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -129,7 +129,7 @@ label {
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 200px;
+	width: 280px;
 	user-select: none;
 }
 
@@ -151,9 +151,11 @@ label {
 	background-color: #ddd;
 }
 
+/*
 .menu ul.list li > span {
 	display: none;
 }
+*/
 
 .menu ul li > span {
 	float: right;
@@ -187,7 +189,7 @@ label {
 	right: 0;
 	height: 32px;
 	margin: 10px 10px 0;
-	width: calc(100% - 220px);
+	width: calc(100% - 300px);
 }
 
 .chart {
@@ -195,7 +197,7 @@ label {
 	top: 114px;
 	right: 0;
 	height: calc(100% - 114px);
-	width: calc(100% - 200px);
+	width: calc(100% - 280px);
 }
 
 .chart .empty-chart {
@@ -269,6 +271,14 @@ label {
 .chart.float-lines ul li {
 	float: left;
 	padding-right: 5%;
+}
+
+.lyrics-only .chart ul li {
+  margin: 10px 0 0;
+}
+
+.lyrics-only .chart ul li:first-child {
+  margin: 26px 0 0;
 }
 
 
