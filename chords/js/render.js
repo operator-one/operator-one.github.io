@@ -3,7 +3,7 @@
   window._render = {
     queue: function() {
       var queueList = __.select('.menu > ul.queue'),
-          hasQueue = _data.queue.length && _data.queue[0];
+          hasQueue = _data.queue.length && __.isNum(_data.queue[0]);
 
       // TODO this is just a patch, find out what is causing _data.queue to be [null]
       if( !hasQueue ) {

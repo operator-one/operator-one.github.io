@@ -8,46 +8,51 @@
 <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="no-chart no-queue">
-	<div class="menu scroll">
-		<ul class="queue"></ul>
-		<ul class="list"></ul>
-	</div>
-	<div class="header scroll">
-		<button class="collapse" onclick="_action.collapse()">&lsaquo;</button>
-		<span class="queue-controls">
-			<button class="prev" onclick="_action.queueNav(-1)">&laquo;</button>
-			<button class="next" onclick="_action.queueNav(1)">&raquo;</button>
-		</span>
-		<span>
-			<label>Trans</label>
-			<button onclick="_action.transpose(-1)">-</button>
-			<button onclick="_action.transpose(1)">+</button>
-		</span>
-		<span>
-			<label>Zoom</label>
-			<button onclick="_action.zoom(-5)">-</button>
-			<button onclick="_action.zoom(5)">+</button>
-		</span>
-		<span>
-			<label>Columns</label>
-			<button class="columns" onclick="_action.columns()">ON</button>
-		</span>
-		<span>
-			<label>Float Lines</label>
-			<button class="float-lines" onclick="_action.floatLines()">OFF</button>
-		</span>
-		<span class="share">
-			<button onclick="_action.share()">SHARE</button>
-		</span>
-		<span class="clear">
-			<button onclick="_action.clear()">CLEAR</button>
-		</span>
-		<span class="lyrics">
-			<button onclick="_action.hideChords()">LYRICS</button>
-		</span>
-	</div>
-	<h2 class="title"></h2>
-	<div class="chart scroll"></div>
+  <div class="wrapper">
+    <div class="menu scroll">
+      <ul class="queue"></ul>
+      <ul class="list"></ul>
+    </div>
+    <div class="header scroll">
+      <button class="collapse" onclick="_action.collapse()">&lsaquo;</button>
+      <span class="queue-controls">
+        <button class="prev" onclick="_action.queueNav(-1)">&laquo;</button>
+        <button class="next" onclick="_action.queueNav(1)">&raquo;</button>
+      </span>
+      <span>
+        <label>Trans</label>
+        <button onclick="_action.transpose(-1)">-</button>
+        <button onclick="_action.transpose(1)">+</button>
+      </span>
+      <span>
+        <label>Zoom</label>
+        <button onclick="_action.zoom(-5)">-</button>
+        <button onclick="_action.zoom(5)">+</button>
+      </span>
+      <span>
+        <label>Columns</label>
+        <button class="columns" onclick="_action.columns()">ON</button>
+      </span>
+      <span>
+        <label>Float Lines</label>
+        <button class="float-lines" onclick="_action.floatLines()">OFF</button>
+      </span>
+      <span class="clear">
+        <button onclick="_action.clear()">CLEAR</button>
+      </span>
+      <span class="share">
+        <button onclick="_action.share()">SHARE</button>
+      </span>
+      <span class="lyrics">
+        <button onclick="_action.hideChords()">LYRICS</button>
+      </span>
+      <span class="theme">
+        <button onclick="_action.theme()">DARK</button>
+      </span>
+    </div>
+    <h2 class="title"></h2>
+    <div class="chart scroll"></div>
+  </div>
 </body>
 <script src="data.js"></script>
 <script src="js/common.js"></script>

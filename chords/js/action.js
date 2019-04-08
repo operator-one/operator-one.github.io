@@ -126,11 +126,18 @@
     collapse: function() {
       var isFull = document.body.classList.contains('full');
 
-      document.body.classList.toggle('full', isFull);
+      document.body.classList.toggle('full', !isFull);
       __.select('.collapse').innerHTML = isFull ? '&lsaquo;' : '&rsaquo;'
     },
+    theme: function(force) {
+      var dark = typeof force !== 'boolean' ?
+            !document.body.classList.contains('dark') :
+            force;
+
+      document.body.classList.toggle('dark', dark);
+      __.select('span.theme button').innerHTML = dark ? 'LIGHT' : 'DARK';
+    },
     hideChords: function(force) {
-      debugger;
       var hideChords = typeof force !== 'boolean' ?
             !_data.selectedChart.hideChords :
             force;

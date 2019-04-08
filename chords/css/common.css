@@ -7,10 +7,19 @@ body {
 
 body {
 	margin: 0;
-	color: #111;
-	background-color: #eee;
 	font-family: serif;
 	position: relative;
+	color: #111;
+}
+
+body > .wrapper {
+	background-color: #eee;
+  width: 100%;
+  height: 100%;
+}
+
+body.dark {
+  filter: invert(90%);
 }
 
 body.full .chart {
@@ -73,6 +82,7 @@ body.no-queue .header .queue-controls {
 }
 
 button {
+  min-width: 48px;
 	width: 48px;
 	height: 48px;
 	margin: 0 10px 0 0;
@@ -92,7 +102,8 @@ button.float-lines {
 
 .share > button,
 .clear > button,
-.lyrics > button {
+.lyrics > button,
+.theme > button {
 	width: auto;
 	font-size: 0.6em;
 }
