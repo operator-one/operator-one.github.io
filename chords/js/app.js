@@ -46,7 +46,7 @@
           _action.queueNav(-1);
 
       // right, down
-      } else if( [39, 40].indexOf(e.keycode) ) {
+      } else if( !!~[39, 40].indexOf(e.keycode) ) {
           _action.queueNav(1);
       }
     },
@@ -66,7 +66,7 @@
           return __.isNum(v);
         });
 
-      if( queue.length && queue[0] ) {
+      if( queue.length && __.isNum(queue[0]) ) {
         _data.queue = queue;
         _app.saveData('queue');
       }

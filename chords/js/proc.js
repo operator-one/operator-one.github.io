@@ -27,7 +27,7 @@
         .sort(function(a, b) {
           return a.id < b.id ? -1 : 1;
         })
-      // have to add the index after sorting
+        // have to add the index after sorting
         .map(function(chart, i) {
           chart.index = i;
 
