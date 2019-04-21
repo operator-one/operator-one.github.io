@@ -1,9 +1,16 @@
 (function() {
 
   window._action = {
+    clearFilter: function() {
+        _data.filter = '';
+        __.select('.menu .search input').value = '';
+        __.select('.menu .search .clear-filter').classList.toggle('show', !!_data.filter);
+        _render.menu();
+    },
     filterMenu: function(e) {
       if( e.key.match(/[a-z0-9\s]+/ig) ) {
         _data.filter = e.target.value;
+        __.select('.menu .search .clear-filter').classList.toggle('show', !!_data.filter);
         _render.menu();
       }
     },

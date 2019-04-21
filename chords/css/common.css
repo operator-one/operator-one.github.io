@@ -1,19 +1,19 @@
 html,
 body {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-	margin: 0;
-	font-family: serif;
-	position: relative;
-	color: #111;
+  margin: 0;
+  font-family: serif;
+  position: relative;
+  color: #111;
 }
 
 body > .wrapper {
-	background-color: #eee;
+  background-color: #eee;
   width: 100%;
   height: 100%;
 }
@@ -23,128 +23,129 @@ body.dark {
 }
 
 body.full .chart {
-	width: 100%;
+  width: 100%;
 }
 
 body.full .header,
 body.full .title {
-	width: calc(100% - 20px);
+  width: calc(100% - 20px);
 }
 
 body.full .menu {
-	left: -280px;
+  left: -280px;
 }
 
 .scroll {
-	overflow: auto;
+  overflow: auto;
 }
 
 .scroll::-webkit-scrollbar-track {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 .scroll::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
-	background-color: #ddd;
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
 }
 
 .scroll::-webkit-scrollbar-thumb {
-	background-color: #ccc;
+  background-color: #ccc;
 }
 
 .header {
-	padding: 10px;
-	height: 52px;
-	width: calc(100% - 300px);
-	position: absolute;
-	top: 0;
-	right: 0;
-	background-color: #eee;
-	overflow-x: auto;
-	overflow-y: hidden;
-	white-space: nowrap;
-	user-select: none;
+  padding: 10px;
+  height: 52px;
+  width: calc(100% - 300px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #eee;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
 }
 
 .header > * {
-	white-space: nowrap;
-	display: inline-block;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 body.no-chart .header > span:not(.clear) {
-	opacity: 0.5;
-	pointer-events: none;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 body.no-queue .header .queue-controls {
-	display: none;
+  display: none;
 }
 
 button {
   min-width: 48px;
-	width: 48px;
-	height: 48px;
-	margin: 0 10px 0 0;
-	border-radius: 3px;
-	border-width: 0px;
-	font-weight: bold;
-	color: #111;
-	background-color: #ccc;
-	cursor: pointer;
+  width: 48px;
+  height: 48px;
+  margin: 0 10px 0 0;
+  border-radius: 3px;
+  border-width: 0px;
+  font-weight: bold;
+  color: #111;
+  background-color: #ccc;
+  cursor: pointer;
 }
 
 button.columns,
 button.float-lines {
-	width: 40px;
-	font-size: 0.6em;
+  width: 40px;
+  font-size: 0.6em;
 }
 
 .share > button,
 .clear > button,
 .lyrics > button,
 .theme > button {
-	width: auto;
-	font-size: 0.6em;
+  width: auto;
+  font-size: 0.6em;
 }
 
 label,
 span {
-	height: 48px;
-	line-height: 48px;
-	display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  display: inline-block;
 }
 
 label {
-	margin: 0 5px 0 0;
+  margin: 0 5px 0 0;
 }
 
 .header > span {
-	padding: 0 0 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .header > span > * {
-	float: left;
+  float: left;
 }
 
 .header > span > label {
-	font-size: 10px;
+  font-size: 10px;
 }
 
 .header > span > button:last-child {
-	margin: 0;
+  margin: 0;
 }
 
 .menu {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 280px;
-	user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  user-select: none;
 }
 
 .menu .search {
+  position: relative;
   height: 48px;
 }
 
@@ -153,152 +154,186 @@ label {
   height: 40px;
   padding: 4px 10px;
   border: none;
-	font-family: serif;
-	font-size: 1.1em;
+  font-family: serif;
+  font-size: 1.1em;
+  font-style: italic;
+  background-color: #eee;
+  color: #777;
 }
 
 .menu .search input:focus {
   outline-width: 0;
 }
 
+.menu .search .clear-filter {
+  display: none;
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  width: 36px;
+  height: 36px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.menu .search .clear-filter:after {
+  content: '\02A2F';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.menu .search .clear-filter.show {
+  display: block;
+}
+
 .collapse {
-	position: relative;
-	float: left;
-	width: 48px;
-	height: 48px;
-	margin: 0;
+  position: relative;
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin: 0;
 }
 
 .menu ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu ul li.active {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 /*
 .menu ul.list li > span {
-	display: none;
+display: none;
 }
-*/
+ */
 
 .menu ul li > span {
-	float: right;
-	height: auto;
-	line-height: normal;
-	font-weight: bold;
-	width: 20px;
-	text-align: center;
-	font-size: 1.1em;
+  float: right;
+  height: auto;
+  line-height: normal;
+  font-weight: bold;
+  width: 20px;
+  text-align: center;
+  font-size: 1.1em;
 }
 
 .menu ul li.active > span {
-	display: inline-block;
+  display: inline-block;
 }
 
 .menu ul li {
-	padding: 10px;
-	cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
 }
 .menu ul li:not(.active):hover {
-	background-color: #e5e5e5;
+  background-color: #e5e5e5;
 }
 
+/*
 .menu ul.queue {
-	border-bottom: 5px solid #ccc;
+border-bottom: 5px solid #ccc;
 }
+ */
 
 .title {
-	position: absolute;
-	top: 62px;
-	right: 0;
-	height: 32px;
-	margin: 10px 10px 0;
-	width: calc(100% - 300px);
+  position: absolute;
+  top: 62px;
+  right: 0;
+  height: 32px;
+  margin: 10px 10px 0;
+  width: calc(100% - 300px);
 }
 
 .chart {
-	position: absolute;
-	top: 114px;
-	right: 0;
-	height: calc(100% - 114px);
-	width: calc(100% - 280px);
+  position: absolute;
+  top: 114px;
+  right: 0;
+  height: calc(100% - 114px);
+  width: calc(100% - 280px);
 }
 
 .chart .empty-chart {
-	margin: 0 10px;
+  margin: 0 10px;
 }
 
 .chart .empty-chart:before {
-	content: '\02190';
-	margin-right: 10px;
+  content: '\02190';
+  margin-right: 10px;
 }
 
 .column {
-	margin: 0;
-	padding: 0 10px 40px;
-	width: calc(50% - 30px);
-	float: left;
+  margin: 0;
+  padding: 0 10px 40px;
+  width: calc(50% - 30px);
+  float: left;
 }
 
 .chart.no-columns .column {
-	width: calc(100% - 30px);
-	padding: 0 10px;
+  width: calc(100% - 30px);
+  padding: 0 10px;
 }
 
 .chart:not(.no-columns) .column ul:first-child li:first-child,
 .chart.no-columns .column:first-child ul:first-child li:first-child {
-	margin: 0;
+  margin: 0;
 }
 
 
 .chart.no-columns .column:last-child {
-	margin: 0 0 20px;
-	padding: 0 10px 40px;
+  margin: 0 0 20px;
+  padding: 0 10px 40px;
 }
 
 .chart ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	height: 100%;
-	overflow: visible;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  overflow: visible;
 }
 
 .chart ul li.empty {
-	margin: 26px 0 0;
-	height: 0;
-	width: 100%;
+  margin: 26px 0 0;
+  height: 0;
+  width: 100%;
 }
 
 .chart ul li {
-	margin: 26px 0 0;
-	white-space: nowrap;
-	font-size: 0.9em;
+  margin: 26px 0 0;
+  white-space: nowrap;
+  font-size: 0.9em;
 }
 
 .chart ul li:first-child {
-	width: 100%;
-	font-weight: bold;
+  width: 100%;
+  font-weight: bold;
 }
 
 .chart ul li .chord {
-	position: relative;
-	display: inline-block;
-	top: -22px;
-	width: 0px;
-	white-space: nowrap;
-	font-weight: bold;
-	font-style: normal;
-	font-size: 1.1em;
+  position: relative;
+  display: inline-block;
+  top: -22px;
+  width: 0px;
+  white-space: nowrap;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.1em;
 }
 
 .chart.float-lines ul li {
-	float: left;
-	padding-right: 5%;
+  float: left;
+  padding-right: 5%;
 }
 
 .lyrics-only .chart ul li {

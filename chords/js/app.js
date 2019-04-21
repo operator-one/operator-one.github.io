@@ -43,12 +43,10 @@
     keydown: function(e) {
       // left, up
       if( !!~[37, 38].indexOf(e.keyCode) ) {
-          debugger;
           _action.queueNav(-1);
 
       // right, down
       } else if( !!~[39, 40].indexOf(e.keyCode) ) {
-          debugger;
           _action.queueNav(1);
       }
     },
@@ -78,6 +76,7 @@
 
       document.onkeydown = _app.keydown;
       __.select('.search').onkeyup = _action.filterMenu;
+      __.select('.search').onclick = _action.clearFilter;
     }
   };
 
