@@ -1,6 +1,12 @@
 (function() {
 
   window._action = {
+    filterMenu: function(e) {
+      if( e.key.match(/[a-z0-9\s]+/ig) ) {
+        _data.filter = e.target.value;
+        _render.menu();
+      }
+    },
     share: function() {
       var str = [
         location.origin,
@@ -42,8 +48,6 @@
     removeFromQueue: function(index) {
       var chart = _data.charts[_data.queue[index]];
 
-      __.select('.menu ul.list > li', true)[chart.index].style.display = 'block';
-
       if( chart.id === _data.selectedChart.id ) {
         __.select('h2').innerHTML = '';
         _render.chart();
@@ -52,17 +56,19 @@
       _data.queue.splice(index, 1);
       _app.saveData('queue');
       _render.queue();
+      _render.menu();
     },
     addToQueue: function(index) {
       var chart = _data.charts[index];
 
-      if( !chart ) {
+      if( !chart || !!~_data.queue.indexOf(chart.index)) {
         return;
       }
 
       _data.queue.push(index);
       _app.saveData('queue');
       _render.queue();
+      _render.menu();
     },
     showChart: function(chart) {
       _proc.chart(chart);
@@ -74,12 +80,17 @@
         active.classList.remove('active');
       }
 
-      __.select('#chart-' + chart.id).classList.add('active');
+      var listItem = __.select('#chart-' + chart.id);
+
+      if( listItem ) {
+        listItem.classList.add('active');
+      }
+
       __.select('h2').innerHTML = chart.title;
 
       document.body.classList.remove('no-chart');
     },
-    selectChartFromQueue: function(index) {
+    selectChartFromQueue: function(index, willRender) {
       var chart = _data.charts[_data.queue[index]];
 
       if( !chart ) {
@@ -88,7 +99,10 @@
 
       _data.queueIndex = index;
       _app.saveData('queueIndex');
-      _action.selectChart(_data.charts[_data.queue[index]].index);
+
+      if( !willRender ) {
+        _action.selectChart(_data.charts[_data.queue[index]].index);
+      }
     },
     selectChart: function(index) {
       var chart = _data.charts[index];
@@ -98,6 +112,10 @@
         _render.chart();
 
         return;
+      }
+
+      if( !!~_data.queue.indexOf(chart.index) ) {
+        _action.selectChartFromQueue(chart.index, true);
       }
 
       if( (_data.selectedChart || {}).id === chart.id ) {
@@ -130,17 +148,17 @@
       __.select('.collapse').innerHTML = isFull ? '&lsaquo;' : '&rsaquo;'
     },
     theme: function(force) {
-      var dark = typeof force !== 'boolean' ?
-            !document.body.classList.contains('dark') :
-            force;
+      var dark = typeof force !== 'boolean'
+            ? !document.body.classList.contains('dark')
+            : force;
 
       document.body.classList.toggle('dark', dark);
       __.select('span.theme button').innerHTML = dark ? 'LIGHT' : 'DARK';
     },
     hideChords: function(force) {
-      var hideChords = typeof force !== 'boolean' ?
-            !_data.selectedChart.hideChords :
-            force;
+      var hideChords = typeof force !== 'boolean'
+            ? !_data.selectedChart.hideChords
+            : force;
 
       _data.selectedChart.hideChords = hideChords;
 
@@ -152,9 +170,9 @@
     },
     columns: function(force) {
       var chart = __.select('.chart'),
-          columns = typeof force !== 'boolean' ?
-            chart.classList.contains('no-columns') :
-            force;
+          columns = typeof force !== 'boolean'
+            ? chart.classList.contains('no-columns')
+            : force;
 
       _data.selectedChart.columns = columns;
       _app.saveData('selectedChart');
@@ -164,9 +182,9 @@
     },
     floatLines: function(force) {
       var chart = __.select('.chart'),
-          floatLines = typeof force !== 'boolean' ?
-            !chart.classList.contains('float-lines') :
-            force;
+          floatLines = typeof force !== 'boolean'
+            ? !chart.classList.contains('float-lines')
+            : force;
 
       _data.selectedChart.floatLines = floatLines;
       _app.saveData('selectedChart');

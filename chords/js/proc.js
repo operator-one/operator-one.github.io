@@ -13,15 +13,16 @@
           var src = chart.split('/').slice(1).join('/');
 
           return {
+            columns: true,
+            filter: '',
+            floatLines: false,
             id: id,
-            title: title,
+            hideChords: false,
             src: src,
             text: null,
+            title: title,
             transposition: 0,
-            zoom: 0,
-            columns: true,
-            floatLines: false,
-            hideChords: false
+            zoom: 0
           };
         })
         .sort(function(a, b) {

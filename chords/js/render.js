@@ -11,7 +11,6 @@
       }
 
       queueList.style.display = hasQueue ? 'block' : 'none';
-
       document.body.classList[hasQueue ? 'remove' : 'add']('no-queue');
 
       queueList.innerHTML = 
@@ -19,8 +18,6 @@
         .map(function(chartIndex, i) {
           var chart = _data.charts[chartIndex],
               isSelected = chart.id === (_data.selectedChart || {}).id;
-
-          __.select('.menu ul.list li', true)[chart.index].style.display = 'none';
 
           if( isSelected ) {
             __.select('.menu ul li', true).forEach(function(li) {
@@ -38,16 +35,25 @@
         .join('');
     },
     menu: function() {
+      var charts = !_data.filter
+        ? _data.charts
+        : _data.charts.filter(function(chart) {
+            return !!~chart.title.toLowerCase().indexOf(_data.filter.toLowerCase());
+          });
+
       __.select('.menu > ul.list').innerHTML =
-        _data.charts
-        .map(function(chart, i) {
-          return '<li onclick="_action.selectChart(' + i + ')" ' +
-            'id="chart-' + chart.id + '">' +
-            chart.title +
-            '<span onclick="_action.addToQueue(' + i + ')">+</span>' +
-            '</li>';
-        })
-        .join('');
+        charts
+          .filter(function(chart) {
+            return !~_data.queue.indexOf(chart.index);
+          })
+          .map(function(chart) {
+            return '<li onclick="_action.selectChart(' + chart.index + ')" ' +
+              'id="chart-' + chart.id + '">' +
+              chart.title +
+              '<span onclick="_action.addToQueue(' + chart.index + ')">+</span>' +
+              '</li>';
+          })
+          .join('');
 
       _action.selectChart((_data.selectedChart || {}).index);
     },
@@ -58,26 +64,21 @@
     },
     chart: function(chart, fromHideChords) {
       __.select('.chart').innerHTML =
-        !(chart || {}).data ?
-        '<div class="empty-chart">select chart from left menu</div>' :
-        chart.data.map(function(column) {
-          return '<div class="column">' +
-            column.map(function(section) {
-              return '<ul>' +
-                section.map(function(line) {
-                  var isEmpty = !line
-                    .replace(/\[.*?\]/g, '')
-                    .trim();
-
-                  return '<li ' +
-                    (isEmpty ? 'class="empty"' : '') + '>' +
-                    _render._chords(line, chart.hideChords) +
-                    '</li>';
-                }).join('') +
-                '</ul>';
-            }).join('') +
-            '</div>';
-        }).join('');
+        !(chart || {}).data
+          ? '<div class="empty-chart">select chart from left menu</div>'
+          : chart.data.map(function(column) {
+            return '<div class="column">' +
+              column.map(function(section) {
+                return '<ul>' +
+                  section.map(function(line) {
+                    return '<li ' +
+                      (!line.replace(/\[.*?\]/g, '').trim() ? 'class="empty"' : '') +
+                      '>' + _render._chords(line, chart.hideChords) + '</li>';
+                  }).join('') +
+                  '</ul>';
+              }).join('') +
+              '</div>';
+            }).join('');
 
       if( chart ) {
         _action.zoom();

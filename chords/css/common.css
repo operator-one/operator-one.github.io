@@ -144,6 +144,23 @@ label {
 	user-select: none;
 }
 
+.menu .search {
+  height: 48px;
+}
+
+.menu .search input {
+  width: 260px;
+  height: 40px;
+  padding: 4px 10px;
+  border: none;
+	font-family: serif;
+	font-size: 1.1em;
+}
+
+.menu .search input:focus {
+  outline-width: 0;
+}
+
 .collapse {
 	position: relative;
 	float: left;
