@@ -43,14 +43,13 @@
     queueNav: function(direction) {
       _data.queueIndex += direction;
       _app.saveData('queueIndex');
-
-      var index = _data.queueIndex % _data.queue.length;
-
-      if( index < 0 ) {
-        index += _data.queue.length;
-      }
-
-      _action.selectChartFromQueue(index);
+      _action.selectChartFromQueue(
+        _data.queueIndex < 0
+          ? _data.queue.length - 1
+          : _data.queueIndex !== _data.queue.length
+            ? _data.queueIndex
+            : 0
+      );
     },
     removeFromQueue: function(index) {
       var chart = _data.charts[_data.queue[index]];
@@ -107,9 +106,7 @@
       _data.queueIndex = index;
       _app.saveData('queueIndex');
 
-      if( !willRender ) {
-        _action.selectChart(_data.charts[_data.queue[index]].index);
-      }
+      _action.selectChart(_data.charts[_data.queue[index]].index);
     },
     selectChart: function(index) {
       var chart = _data.charts[index];
@@ -119,10 +116,6 @@
         _render.chart();
 
         return;
-      }
-
-      if( !!~_data.queue.indexOf(chart.index) ) {
-        _action.selectChartFromQueue(chart.index, true);
       }
 
       if( (_data.selectedChart || {}).id === chart.id ) {
