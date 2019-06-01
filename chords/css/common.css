@@ -310,9 +310,10 @@ border-bottom: 5px solid #ccc;
 }
 
 .chart ul li {
-  margin: 26px 0 0;
+  padding: 36px 0 0;
   white-space: nowrap;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  color: #ccc;
 }
 
 .chart ul li:first-child {
@@ -329,6 +330,7 @@ border-bottom: 5px solid #ccc;
   font-weight: bold;
   font-style: normal;
   font-size: 1.1em;
+  color: #eee;
 }
 
 .chart.float-lines ul li {

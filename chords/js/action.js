@@ -198,7 +198,7 @@
 
       __.select('.chart > .column', true)
         .forEach(function(column) {
-          column.style.zoom = (100 + _data.selectedChart.zoom) + '%';
+          column.style.fontSize = ((100 + _data.selectedChart.zoom) / 100) + 'em';
         });
     },
     transpose: function(direction) {

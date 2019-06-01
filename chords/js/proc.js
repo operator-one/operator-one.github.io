@@ -78,7 +78,7 @@
         });
     },
     chart: function(chart) {
-      chart.text = chart.text.replace(/<script.*?>.*?<\/script>/gmis, '');
+      chart.text = chart.text.replace(/(<([^>]+)>)/gi, '');
       chart.data = _proc._setChartData(chart);
 
       return chart;
