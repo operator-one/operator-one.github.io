@@ -196,10 +196,23 @@
       _data.selectedChart.zoom += direction || 0;
       _app.saveData('selectedChart');
 
-      __.select('.chart > .column', true)
-        .forEach(function(column) {
-          column.style.fontSize = ((100 + _data.selectedChart.zoom) / 100) + 'em';
-        });
+      var chart = __.select('.chart');
+      var val = ((100 + _data.selectedChart.zoom) / 100),
+          scale = 'scale(' + val + ')',
+          origin = 'top left';
+
+      chart.style.zoom = val;
+      chart.style['-moz-transform'] = scale;
+      chart.style['-webkit-transform'] = scale;
+      chart.style['-moz-transform-origin'] = origin;
+      chart.style['-webkit-transform-origin'] = origin;
+
+      if( document.body.classList.contains('full') ) {
+        chart.style.width = (innerWidth / val) + 'px';
+
+      } else {
+        chart.style.width = ((innerWidth - 280) / val) + 'px';
+      }
     },
     transpose: function(direction) {
       _data.selectedChart.transposition += direction;
