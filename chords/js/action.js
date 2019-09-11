@@ -199,7 +199,10 @@
       if( !!~navigator.userAgent.indexOf('Chrome') ) {
         __.select('.chart > .column', true)
          .forEach(function(column) {
-           column.style.fontSize = ((100 + _data.selectedChart.zoom) / 100) + 'em';
+           var size = ((100 + _data.selectedChart.zoom) / 100) + 'em';
+
+           column.style.fontSize = size;
+           column.style.lineHeight = size;
          });
 
       } else {
