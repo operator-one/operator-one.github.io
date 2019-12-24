@@ -32,7 +32,7 @@
       __.copy(str);
       alert('Copied to clipboard: ' + str);
     },
-    clear: function() {
+    refresh: function() {
       _app.clearData('selectedChart');
       _app.clearData('charts');
       _app.reload();
