@@ -73,10 +73,15 @@ body.full .menu {
   display: inline-block;
 }
 
-body.no-chart .header > span:not(.clear),
-body.no-chart .header > span:not(.theme) {
+body.no-chart .header > span {
   opacity: 0.5;
   pointer-events: none;
+}
+
+body.no-chart .header > span.clear,
+body.no-chart .header > span.theme {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 body.no-queue .header .queue-controls {
