@@ -37,6 +37,8 @@
             ' id="chart-' + chart.id + '">' +
             chart.title +
             '<span onclick="_action.removeFromQueue(' + i + ')">-</span>' +
+            '<span class="move-up">&utrif;</span>' +
+            '<span class="move-down">&dtrif;</span>' +
             '</li>';
         })
         .join('');

@@ -33,7 +33,7 @@ body.full .title {
 }
 
 body.full .menu {
-  left: -280px;
+  left: -350px;
 }
 
 .scroll {
@@ -57,7 +57,7 @@ body.full .menu {
 .header {
   padding: 10px;
   height: 52px;
-  width: calc(100% - 300px);
+  width: calc(100% - 370px);
   position: absolute;
   top: 0;
   right: 0;
@@ -80,6 +80,7 @@ body.no-chart .header > span {
 
 body.no-chart .header > span.refresh,
 body.no-chart .header > span.clear,
+body.no-chart .header > span.share,
 body.no-chart .header > span.theme {
   opacity: 1;
   pointer-events: initial;
@@ -149,7 +150,7 @@ label {
   top: 0;
   left: 0;
   height: 100%;
-  width: 280px;
+  width: 350px;
   user-select: none;
 }
 
@@ -235,6 +236,13 @@ display: none;
   width: 20px;
   text-align: center;
   font-size: 1.1em;
+  marin-right: 5px;
+  opacity: 0.5;
+}
+
+.menu ul li > span.move-up:hover,
+.menu ul li > span.move-down:hover {
+  opacity: 1;
 }
 
 .menu ul li.active > span {
@@ -261,15 +269,15 @@ border-bottom: 5px solid #ccc;
   right: 0;
   height: 32px;
   margin: 10px 10px 0;
-  width: calc(100% - 300px);
+  width: calc(100% - 370px);
 }
 
 .chart {
   position: absolute;
   top: 114px;
-  left: 280px;
+  left: 350px;
   height: calc(100% - 114px);
-  width: calc(100% - 280px);
+  width: calc(100% - 350px);
 }
 
 .chart .empty-chart {
