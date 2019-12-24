@@ -6,7 +6,7 @@
       _render.queue();
 
       // ensure we re-apply the theme
-      _action.theme(_app.fetchData('useDarkTheme'));
+      _action.theme(!!_app.fetchData('useDarkTheme'));
     },
     queue: function() {
       var queueList = __.select('.menu > ul.queue'),

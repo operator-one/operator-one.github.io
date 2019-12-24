@@ -156,7 +156,7 @@
       __.select('span.theme button').innerHTML = theme;
 
       // save theme
-      _data.useDarkTheme = dark;
+      _data.useDarkTheme = dark ? 1 : 0;
       _app.saveData('useDarkTheme');
     },
     hideChords: function(force) {
