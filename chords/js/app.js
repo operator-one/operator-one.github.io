@@ -8,6 +8,9 @@
       delete localStorage[key];
       delete _data[key];
     },
+    reload: function() {
+      location.href = location.origin + location.pathname;
+    },
     fetchData: function(key) {
       var data = localStorage[key];
 
@@ -71,8 +74,7 @@
         _app.saveData('queue');
       }
 
-      _render.menu();
-      _render.queue();
+      _render.app();
 
       document.onkeydown = _app.keydown;
       __.select('.search').onkeyup = _action.filterMenu;

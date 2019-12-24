@@ -73,7 +73,8 @@ body.full .menu {
   display: inline-block;
 }
 
-body.no-chart .header > span:not(.clear) {
+body.no-chart .header > span:not(.clear),
+body.no-chart .header > span:not(.theme) {
   opacity: 0.5;
   pointer-events: none;
 }

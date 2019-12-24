@@ -37,8 +37,7 @@
       _app.clearData('charts');
       _app.clearData('queue');
       _app.clearData('queueIndex');
-
-      location.href = location.origin + location.pathname;
+      _app.reload();
     },
     queueNav: function(direction) {
       _data.queueIndex += direction;
@@ -150,10 +149,15 @@
     theme: function(force) {
       var dark = typeof force !== 'boolean'
             ? !document.body.classList.contains('dark')
-            : force;
+            : force,
+        theme = dark ? 'LIGHT' : 'DARK';
 
       document.body.classList.toggle('dark', dark);
-      __.select('span.theme button').innerHTML = dark ? 'LIGHT' : 'DARK';
+      __.select('span.theme button').innerHTML = theme;
+
+      // save theme
+      _data.useDarkTheme = dark;
+      _app.saveData('useDarkTheme');
     },
     hideChords: function(force) {
       var hideChords = typeof force !== 'boolean'

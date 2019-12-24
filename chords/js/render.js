@@ -1,6 +1,13 @@
 (function() {
 
   window._render = {
+    app: function() {
+      _render.menu();
+      _render.queue();
+
+      // ensure we re-apply the theme
+      _action.theme(_app.fetchData('useDarkTheme'));
+    },
     queue: function() {
       var queueList = __.select('.menu > ul.queue'),
           hasQueue = _data.queue.length && __.isNum(_data.queue[0]);
