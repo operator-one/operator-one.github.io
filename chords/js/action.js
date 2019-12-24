@@ -35,6 +35,11 @@
     clear: function() {
       _app.clearData('selectedChart');
       _app.clearData('charts');
+      _app.reload();
+    },
+    clear: function() {
+      _app.clearData('selectedChart');
+      _app.clearData('charts');
       _app.clearData('queue');
       _app.clearData('queueIndex');
       _app.reload();

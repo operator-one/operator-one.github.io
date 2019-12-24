@@ -78,6 +78,7 @@ body.no-chart .header > span {
   pointer-events: none;
 }
 
+body.no-chart .header > span.refresh,
 body.no-chart .header > span.clear,
 body.no-chart .header > span.theme {
   opacity: 1;
@@ -108,6 +109,7 @@ button.float-lines {
 }
 
 .share > button,
+.refresh > button,
 .clear > button,
 .lyrics > button,
 .theme > button {
