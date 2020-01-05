@@ -101,6 +101,11 @@
       document.body.classList.remove('no-chart');
     },
     selectChartFromQueue: function(index, willRender) {
+
+      console.log(arguments);
+      debugger;
+
+      
       var chart = _data.charts[_data.queue[index]];
 
       if( !chart ) {

@@ -79,6 +79,16 @@
       document.onkeydown = _app.keydown;
       __.select('.search').onkeyup = _action.filterMenu;
       __.select('.search').onclick = _action.clearFilter;
+
+      dragonfly('.queue', function () {
+          console.log('This is a callback');
+      });
+
+      document.addEventListener('click', e => {
+        if( e.target && e.target.getAttribute('data-event') === 'select-chart' ) {
+          _action.selectChartFromQueue(__.getElementIndex(e.target));
+        }
+      });
     }
   };
 

@@ -4,9 +4,11 @@
     _return: function(param, fn, _return) {
       var result = fn();
 
-      return _return ?
-        result ? param : void 0 :
-        result;
+      return _return
+        ? result
+          ? param
+          : void 0
+        : result;
     },
     isArr: function(param, _return) {
       return __._return(param, function() {
@@ -41,6 +43,11 @@
           !__.isStr(param) &&
           !__.isNum(param) &&
           !__.isBool(param);
+      }, _return);
+    },
+    isNill: function(param, _return) {
+      return __._return(param, function() {
+        return param === undefined || param === null
       }, _return);
     },
     isSet: function(param) {
@@ -104,6 +111,17 @@
         })
         .join(',') +
         '}');
+    },
+    getElementIndex: function(element) {
+      let { previousSibling } = element;
+      let count = 0;
+
+      while( previousSibling ) {
+        count++;
+        previousSibling = previousSibling.previousSibling;
+      }
+
+      return count;
     }
   };
 })();
