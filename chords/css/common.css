@@ -334,7 +334,7 @@ border-bottom: 5px solid #ccc;
 }
 
 .chart ul li.empty {
-  margin: 26px 0 0;
+  margin: 0;
   height: 0;
   width: 100%;
 }
@@ -369,7 +369,12 @@ border-bottom: 5px solid #ccc;
 }
 
 .lyrics-only .chart ul li {
-  margin: 10px 0 0;
+  margin: 0;
+  padding: 10px 0 0;
+}
+
+.lyrics-only .chart ul li.empty {
+  display: none;
 }
 
 .lyrics-only .chart ul li:first-child {
