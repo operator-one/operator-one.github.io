@@ -66,6 +66,7 @@
     },
     _chords: function(line, hideChords) {
       return (line || '')
+        .replace(/(\(repeat\))/, '<i>$1</i>')
         .replace(/ /g, '&nbsp;')
         .replace(/\[(.*?)\]/g, hideChords ? '' : '<div class="chord">$1</div>');
     },
