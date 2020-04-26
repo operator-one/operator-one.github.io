@@ -4,10 +4,28 @@
   <meta charset="UTF-8">
   <meta name="google-signin-client_id" content="691716131409-rda06jv6rqna82ddasnlbin5fvmfgbb5.apps.googleusercontent.com">
   <title>test</title>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
   this is a test
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <a href="#" onclick="signOut();">Sign out</a>
 </body>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    // Do not send to your backend! Use an ID token instead.
+    console.log('ID: ' + profile.getId()); 
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    // This is null if the 'email' scope is not present.
+    console.log('Email: ' + profile.getEmail());
+  }
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 </html>
