@@ -2,7 +2,7 @@
 
   window._app = {
     saveData: function(key) {
-      localStorage[key] = JSON.stringify(_data[key]);
+//       localStorage[key] = JSON.stringify(_data[key]);
     },
     clearData: function(key) {
       delete localStorage[key];
@@ -12,9 +12,9 @@
       location.href = location.origin + location.pathname;
     },
     fetchData: function(key) {
-      var data = localStorage[key];
-
-      return data ? JSON.parse(data) : void 0;
+//       var data = localStorage[key];
+//       return data ? JSON.parse(data) : void 0;
+      return void 0;
     },
     getChartById: function(id) {
       var i, len, chart;
@@ -58,7 +58,7 @@
       _data.charts = _app.fetchData('charts') || _proc.charts(_data.charts);
       _data.queue = _app.fetchData('queue') || [];
       _data.queueIndex = _app.fetchData('queueIndex') || -1;
-      _app.saveData('charts');
+//       _app.saveData('charts');
 
       var queue = ((__.getQueryParams()['queue'] || '')
         .split(',')
@@ -71,7 +71,7 @@
 
       if( queue.length && __.isNum(queue[0]) ) {
         _data.queue = queue;
-        _app.saveData('queue');
+//         _app.saveData('queue');
       }
 
       _render.app();
