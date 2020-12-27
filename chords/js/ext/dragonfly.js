@@ -329,10 +329,10 @@ function dragonfly(element, callback) {
 /**
  * DragonflyJS Usage
  */
-document.addEventListener('DOMContentLoaded', function () {
-    'use strict';
-
-    dragonfly('.drag-container', function () {
-        console.log('This is a callback');
-    });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     'use strict';
+// 
+//     dragonfly('.drag-container', function() {
+//       console.log('called on mouseup');
+//     });
+// });

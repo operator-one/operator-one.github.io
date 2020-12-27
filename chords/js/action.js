@@ -101,11 +101,6 @@
       document.body.classList.remove('no-chart');
     },
     selectChartFromQueue: function(index, willRender) {
-
-      console.log(arguments);
-      debugger;
-
-      
       var chart = _data.charts[_data.queue[index]];
 
       if( !chart ) {
@@ -129,7 +124,7 @@
 
       if( (_data.selectedChart || {}).id === chart.id ) {
         _data.charts[chart.index] = _data.selectedChart;
-        _app.saveData('charts');
+//         _app.saveData('charts');
         _action.showChart(_data.selectedChart);
 
         return;
