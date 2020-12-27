@@ -3,7 +3,7 @@ window._data = {
     "./charts/OhHolyNight.ccl",
     "./charts/MaryDidYouKnow.ccl",
     "./charts/AwayInAManger.ccl",
-    "./charts/AngelsFromTheRealmOfGlory.ccl",
+    "./charts/AngelsFromTheRealmsOfGlory.ccl",
     "./charts/ChristmasBells.ccl",
     "./charts/HappyBirthdayJesus.ccl",
     "./charts/ThisLittleLight.ccl",
