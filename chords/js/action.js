@@ -151,6 +151,14 @@
       document.body.classList.toggle('full', !isFull);
       __.select('.collapse').innerHTML = isFull ? '&lsaquo;' : '&rsaquo;'
     },
+    loadCurrentSet: function() {
+      window.location.href = [
+        window.location.origin,
+        window.location.pathname,
+        '?queue=',
+        _data.currentSet.join(',')
+      ].join('');
+    },
     theme: function(force) {
       var dark = typeof force !== 'boolean'
             ? !document.body.classList.contains('dark')

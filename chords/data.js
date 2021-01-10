@@ -1,4 +1,10 @@
 window._data = {
+  "currentSet": [
+    "overtaken",
+    "death-was-arrested",
+    "tremble",
+    "way-maker",
+  ],
   "charts": [
     "./charts/Overtaken.ccl",
     "./charts/OhHolyNight.ccl",
