@@ -88,7 +88,8 @@ body.no-chart .header > span {
 body.no-chart .header > span.refresh,
 body.no-chart .header > span.clear,
 body.no-chart .header > span.share,
-body.no-chart .header > span.theme {
+body.no-chart .header > span.theme,
+body.no-chart .header > span.set {
   opacity: 1;
   pointer-events: initial;
 }
@@ -120,7 +121,8 @@ button.float-lines {
 .refresh > button,
 .clear > button,
 .lyrics > button,
-.theme > button {
+.theme > button,
+.set > button {
   width: auto;
   font-size: 0.6em;
 }
