@@ -1,5 +1,6 @@
 window._data = {
   "charts": [
+    "./charts/Overtaken.ccl",
     "./charts/OhHolyNight.ccl",
     "./charts/MaryDidYouKnow.ccl",
     "./charts/AwayInAManger.ccl",
