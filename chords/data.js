@@ -1,11 +1,13 @@
 window._data = {
   "currentSet": [
     "overtaken",
-    "death-was-arrested",
-    "tremble",
-    "way-maker",
+    "in-over-my-head",
+    "it-is-well",
+    "in-the-presence-of-angels",
   ],
   "charts": [
+    "./charts/GreatIsThyFaithfulness.ccl",
+    "./charts/RaiseAHallelujah.ccl",
     "./charts/Overtaken.ccl",
     "./charts/OhHolyNight.ccl",
     "./charts/MaryDidYouKnow.ccl",
