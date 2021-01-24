@@ -1,7 +1,7 @@
 window._data = {
   "currentSet": [
     "good-good-father",
-    "mighty-fortress,
+    "mighty-fortress",
     "dance-with-me",
     "revelation-song",
   ],
