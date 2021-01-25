@@ -1,9 +1,9 @@
 window._data = {
   "currentSet": [
-    "overtaken",
-    "in-over-my-head",
-    "it-is-well",
-    "in-the-presence-of-angels",
+    "good-good-father",
+    "mighty-fortress",
+    "dance-with-me",
+    "revelation-song",
   ],
   "charts": [
     "./charts/GreatIsThyFaithfulness.ccl",
