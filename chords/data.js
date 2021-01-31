@@ -1,9 +1,10 @@
 window._data = {
   "currentSet": [
-    "good-good-father",
-    "mighty-fortress",
-    "dance-with-me",
-    "revelation-song",
+    "even-so-come",
+    "it-is-well-through-it-all",
+    "overwhelmed",
+    "new-wine",
+    "i-surrender"
   ],
   "charts": [
     "./charts/GreatIsThyFaithfulness.ccl",
