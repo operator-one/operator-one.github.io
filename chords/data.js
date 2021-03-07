@@ -1,10 +1,10 @@
 window._data = {
   "currentSet": [
-    "even-so-come",
-    "it-is-well-through-it-all",
-    "overwhelmed",
-    "new-wine",
-    "i-surrender"
+    "your-grace-is-enough",
+    "overtaken",
+    "good-good-father",
+    "tremble",
+    "new-wine"
   ],
   "charts": [
     "./charts/GreatIsThyFaithfulness.ccl",
