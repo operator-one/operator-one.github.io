@@ -1,9 +1,9 @@
 window._data = {
   "currentSet": [
-    "your-grace-is-enough",
-    "overtaken",
+    "beautiful-one",
     "good-good-father",
-    "tremble",
+    "mighty-fortress",
+    "way-maker",
     "new-wine"
   ],
   "charts": [
