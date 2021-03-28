@@ -1,9 +1,10 @@
 window._data = {
   "currentSet": [
-    "your-grace-is-enough",
-    "your-great-name",
-    "oceans",
-    "way-maker"
+    "blessed-be-your-name",
+    "death-was-arrested",
+    "great-are-you-lord",
+    "i-surrender",
+    "dance-with-me"
   ],
   "charts": [
     "./charts/GreatIsThyFaithfulness.ccl",
