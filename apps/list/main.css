@@ -1,6 +1,5 @@
 body {
 	padding: 10px;
-	zoom: 230%;
 	background: #111;
 	color: #eee;
 	width: 420px;
@@ -20,7 +19,7 @@ textarea {
 }
 
 button,
-li {
+ul:not(.menu) li {
 	margin: 10px 5px;
 	position: relative;
 	padding: 10px 20px;
@@ -29,13 +28,13 @@ li {
 	border-radius: 3px;
 }
 
-ul {
+ul:not(.menu) {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 }
 
-li {
+ul:not(.menu) li {
 	list-style: none;
 	cursor: pointer;
 	background: #222;
@@ -45,19 +44,19 @@ li {
 	margin: 5px auto;
 }
 
-li::before {
+ul:not(.menu) li::before {
 	content: ' \000B7 ';
 }
 
-li.checked {
+ul:not(.menu) li.checked {
 	background: #333;
 }
 
-li.checked::before {
+ul:not(.menu) li.checked::before {
 	content: '\000D7';
 }
 
-li.checked input {
+ul:not(.menu) li.checked input {
 	text-decoration: line-through;
 }
 
