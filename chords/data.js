@@ -7,7 +7,9 @@ window._data = {
     "revelation-song"
   ],
   "charts": [
+    "./charts/TheOldRuggedCross.ccl",
     "./charts/GreatIsThyFaithfulness.ccl",
+    "./charts/WhereverYouGo.ccl",
     "./charts/RaiseAHallelujah.ccl",
     "./charts/Overtaken.ccl",
     "./charts/OhHolyNight.ccl",
