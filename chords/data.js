@@ -1,12 +1,12 @@
 window._data = {
   "currentSet": [
-    "happy-day",
-    "10000-reasons",
-    "because-he-lives",
-    "in-the-presence-of-angles",
-    "revelation-song"
+    "graves-into-gardens",
+    "great-are-you-lord",
+    "holy-spirit",
+    "new-wine"
   ],
   "charts": [
+    "./charts/GravesIntoGardens.ccl",
     "./charts/TheOldRuggedCross.ccl",
     "./charts/GreatIsThyFaithfulness.ccl",
     "./charts/WhereverYouGo.ccl",
