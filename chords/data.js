@@ -1,8 +1,9 @@
 window._data = {
   "currentSet": [
+    "your-grace-is-enough",
     "graves-into-gardens",
-    "great-are-you-lord",
-    "holy-spirit",
+    "tremble",
+    "dance-with-me",
     "new-wine"
   ],
   "charts": [
