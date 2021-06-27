@@ -1,10 +1,9 @@
 window._data = {
   "currentSet": [
-    "your-grace-is-enough",
-    "graves-into-gardens",
-    "tremble",
-    "dance-with-me",
-    "new-wine"
+    "raise-a-hallelujah",
+    "what-a-beautiful-name",
+    "lion-and-the-lamb",
+    "the-old-rugged-cross"
   ],
   "charts": [
     "./charts/GravesIntoGardens.ccl",
